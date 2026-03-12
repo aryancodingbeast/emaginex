@@ -308,13 +308,14 @@ export default function AIAutomationScroll() {
         <div className="absolute inset-0 bg-fog-radial" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.52),rgba(236,236,236,0.22),rgba(230,230,230,0.46))]" />
         <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.04),rgba(255,255,255,0)_54%)]" />
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(236,236,236,0.82)_0%,rgba(236,236,236,0.08)_28%,rgba(236,236,236,0.06)_58%,rgba(236,236,236,0.86)_100%)] md:hidden" />
 
-        <div className="absolute inset-x-0 top-0 z-30 px-6 pt-6 sm:px-10 lg:px-16">
-          <div className="mx-auto flex max-w-7xl items-center justify-between border-b border-black/[0.08] pb-5 text-sm text-black/60">
+        <div className="absolute inset-x-0 top-0 z-30 px-4 pt-4 sm:px-10 sm:pt-6 lg:px-16">
+          <div className="mx-auto flex max-w-7xl items-center justify-between border-b border-black/[0.08] pb-4 text-sm text-black/60 sm:pb-5">
             <span className="font-medium uppercase tracking-[0.28em] text-black/80">
               EmagineX
             </span>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-3 sm:gap-5">
               <nav className="hidden gap-8 md:flex">
                 <a href="#automation-system">System</a>
                 <a href="#services">Services</a>
@@ -322,7 +323,7 @@ export default function AIAutomationScroll() {
               </nav>
               <a
                 href="#contact"
-                className="inline-flex h-10 items-center rounded-full border border-black/10 bg-white/[0.82] px-4 text-xs font-medium uppercase tracking-[0.18em] text-black/80 backdrop-blur-md transition hover:bg-white"
+                className="inline-flex h-9 items-center rounded-full border border-black/10 bg-white/[0.82] px-3 text-[10px] font-medium uppercase tracking-[0.18em] text-black/80 backdrop-blur-md transition hover:bg-white sm:h-10 sm:px-4 sm:text-xs"
               >
                 Start audit
               </a>
@@ -346,28 +347,28 @@ export default function AIAutomationScroll() {
           ))}
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-6 pb-6 sm:px-10 lg:px-16">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-4 pb-4 sm:px-10 sm:pb-6 lg:px-16">
           <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="no-scrollbar -mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 sm:mx-0 sm:grid sm:overflow-visible sm:px-0 lg:grid-cols-3">
               {heroMetrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className="rounded-[1.5rem] border border-white/40 bg-white/[0.36] p-4 shadow-soft backdrop-blur-[8px]"
+                  className="min-w-[12.5rem] snap-start rounded-[1.25rem] border border-white/40 bg-white/[0.4] p-3.5 shadow-soft backdrop-blur-[8px] sm:min-w-0 sm:rounded-[1.5rem] sm:p-4"
                 >
                   <p className="text-[11px] uppercase tracking-[0.24em] text-black/45">
                     {metric.label}
                   </p>
-                  <p className="mt-2 text-base font-medium tracking-[-0.03em] text-black/85 sm:text-lg">
+                  <p className="mt-2 text-[15px] font-medium tracking-[-0.03em] text-black/85 sm:text-lg">
                     {metric.value}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-[1.5rem] border border-white/40 bg-white/[0.36] px-4 py-3 shadow-soft backdrop-blur-[8px] lg:min-w-[280px]">
+            <div className="rounded-[1.25rem] border border-white/40 bg-white/[0.4] px-4 py-3 shadow-soft backdrop-blur-[8px] lg:min-w-[280px]">
               <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.24em] text-black/42">
-                <span>Scroll progress</span>
-                <span>Automation sequence</span>
+                <span>Scroll</span>
+                <span>Sequence</span>
               </div>
               <div className="mt-3 h-[3px] overflow-hidden rounded-full bg-black/[0.08]">
                 <motion.div
@@ -380,7 +381,7 @@ export default function AIAutomationScroll() {
         </div>
 
         {!isReady && hasMounted ? (
-          <div className="absolute inset-0 z-30 flex items-center justify-center bg-[rgba(236,236,236,0.8)] backdrop-blur-sm">
+          <div className="absolute inset-0 z-30 flex items-center justify-center bg-[rgba(236,236,236,0.84)] backdrop-blur-sm">
             <div className="flex flex-col items-center gap-5 text-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white/70 shadow-soft">
                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-black/15 border-t-black/60" />
@@ -419,18 +420,18 @@ function OverlayBlock({
   return (
     <motion.div
       style={{ opacity, y }}
-      className={`absolute inset-0 flex items-start px-6 pt-[13.5rem] md:items-center md:px-10 md:pt-0 lg:px-16 ${overlayPositionClass(overlay.desktopAlignment)}`}
+      className={`absolute inset-0 flex items-end px-4 pb-28 md:items-center md:px-10 md:pb-0 lg:px-16 ${overlayPositionClass(overlay.desktopAlignment)}`}
     >
       <div
-        className={`max-w-[21rem] rounded-[1.8rem] border border-white/45 bg-white/[0.3] px-5 py-4 shadow-soft backdrop-blur-[8px] md:max-w-[25rem] md:px-6 md:py-5 ${textAlignClass(overlay.desktopAlignment)}`}
+        className={`max-w-[18rem] rounded-[1.45rem] border border-white/45 bg-white/[0.38] px-4 py-3.5 shadow-soft backdrop-blur-[10px] md:max-w-[25rem] md:rounded-[1.8rem] md:px-6 md:py-5 ${textAlignClass(overlay.desktopAlignment)}`}
       >
-        <p className="text-xs uppercase tracking-[0.3em] text-black/45">
+        <p className="text-[10px] uppercase tracking-[0.28em] text-black/45 md:text-xs md:tracking-[0.3em]">
           Connected by AI
         </p>
-        <h2 className="mt-3 text-3xl font-medium tracking-[-0.05em] text-black/90 md:text-5xl">
+        <h2 className="mt-2.5 text-[1.9rem] font-medium leading-[0.96] tracking-[-0.05em] text-black/90 md:mt-3 md:text-5xl">
           {overlay.title}
         </h2>
-        <p className="mt-3 text-sm leading-6 text-black/60 md:text-base">
+        <p className="mt-2.5 text-[13px] leading-5 text-black/60 md:mt-3 md:text-base md:leading-6">
           {overlay.copy}
         </p>
       </div>
