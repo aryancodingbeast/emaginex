@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --page-bg: #ececec;
+  --page-bg-soft: #e6e6e6;
+  --page-ink: rgba(17, 17, 17, 0.92);
+  --page-muted: rgba(17, 17, 17, 0.6);
+  --page-line: rgba(17, 17, 17, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.94) 0%, rgba(236, 236, 236, 0.92) 42%, rgba(230, 230, 230, 1) 100%);
+  color: var(--page-ink);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+canvas {
+  display: block;
+}
+
+.editorial-shell {
+  position: relative;
+  overflow-x: clip;
+}
+
+.editorial-shell::before,
+.editorial-shell::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+
+.editorial-shell::before {
+  top: 5rem;
+  left: -6rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.editorial-shell::after {
+  right: -6rem;
+  bottom: 10rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.editorial-shell > .relative::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px);
+  background-size: 100% 120px, 120px 100%;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 82%);
+}
