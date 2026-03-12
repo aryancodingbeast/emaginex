@@ -347,18 +347,18 @@ export default function AIAutomationScroll() {
           ))}
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-4 pb-4 sm:px-10 sm:pb-6 lg:px-16">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden px-4 pb-4 sm:block sm:px-10 sm:pb-6 lg:px-16">
           <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div className="no-scrollbar -mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 sm:mx-0 sm:grid sm:overflow-visible sm:px-0 lg:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-3">
               {heroMetrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className="min-w-[12.5rem] snap-start rounded-[1.25rem] border border-white/40 bg-white/[0.4] p-3.5 shadow-soft backdrop-blur-[8px] sm:min-w-0 sm:rounded-[1.5rem] sm:p-4"
+                  className="rounded-[1.5rem] border border-white/40 bg-white/[0.4] p-4 shadow-soft backdrop-blur-[8px]"
                 >
                   <p className="text-[11px] uppercase tracking-[0.24em] text-black/45">
                     {metric.label}
                   </p>
-                  <p className="mt-2 text-[15px] font-medium tracking-[-0.03em] text-black/85 sm:text-lg">
+                  <p className="mt-2 text-lg font-medium tracking-[-0.03em] text-black/85">
                     {metric.value}
                   </p>
                 </div>
